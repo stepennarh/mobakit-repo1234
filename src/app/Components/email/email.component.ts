@@ -15,7 +15,7 @@ export class EmailComponent implements OnInit {
   CustomerEmail(regForm: any) {
     this.emailid = this.model.email
     console.log(JSON.stringify(this.emailid))
-    this.http.post('hhttp://mobikart-tg-1194274676.us-east-1.elb.amazonaws.com/sendEmail', JSON.stringify(this.model), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
+    this.http.post('http://mobikart-tg-1194274676.us-east-1.elb.amazonaws.com/sendEmail', JSON.stringify(this.model), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
       this.result = res
       if (this.result.success == true) {
         this.emailSend = "Password Has been Sent to Your Email Successfully"
