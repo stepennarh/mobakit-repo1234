@@ -22,7 +22,7 @@ export class ChangePasswordComponent implements OnInit {
     }
     else {
       console.log(JSON.stringify(this.model))
-      this.http.post('http://mobikart-tg-1194274676.us-east-1.elb.amazonaws.com/changePassword', JSON.stringify(this.model), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
+      this.http.post('http://mobikart-alb-1356648039.us-east-1.elb.amazonaws.com/changePassword', JSON.stringify(this.model), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
         this.result = res
         if (this.result.success == true) this.router.navigate(['/login'])
         else this.passwordalert = "Invalid Password ! Old Password is Incorrect"
