@@ -17,7 +17,7 @@ export class AddProductComponent implements OnInit {
     console.log(this.fileToUpload);
     const formData: FormData = new FormData();
     formData.append('Image', this.fileToUpload);
-    this.http.post('http://mobikart-alb-1356648039.us-east-1.elb.amazonaws.com/upload', formData).subscribe((res) => {
+    this.http.post('http://backend-mobikart-alb-2052532502.us-east-1.elb.amazonaws.com/upload', formData).subscribe((res) => {
       console.log(res);
     });
   }
@@ -38,13 +38,13 @@ export class AddProductComponent implements OnInit {
     //console.log(this.model);
     /*const data=JSON.stringify(this.model);
     console.log(data);
-    this.http.post('http://mobikart-alb-1356648039.us-east-1.elb.amazonaws.com/process',data,{headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe((res)=>{
+    this.http.post('http://backend-mobikart-alb-2052532502.us-east-1.elb.amazonaws.com/process',data,{headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe((res)=>{
       console.log(res);
     });*/
     const data = JSON.stringify(this.model);
     console.log("Data hai", data);
 
-    this.http.post('http://mobikart-alb-1356648039.us-east-1.elb.amazonaws.com/process', data, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
+    this.http.post('http://backend-mobikart-alb-2052532502.us-east-1.elb.amazonaws.com/process', data, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).subscribe((res) => {
       console.log(res);
       this.router.navigate(['/adminDash']);
     });
