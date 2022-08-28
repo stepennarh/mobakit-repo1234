@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0)
-    this.http.get('http://backend-mobikart-alb-2052532502.us-east-1.elb.amazonaws.com/getLimitData/8').subscribe((res) => {
+    this.http.get('http://mobikart-alb-289660721.us-east-1.elb.amazonaws.com/getLimitData/8').subscribe((res) => {
       //console.log(res);
       this.models = res;
       console.log(this.models)
